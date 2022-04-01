@@ -1,80 +1,84 @@
 package com.BlueBank.Projeto.Final.Model;
 
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name= "Tb_Customer_Account")
-public class CustomerAccount implements Serializable
-{
-    private static final long serialVersionUID = 1L;
+@Table(name = "TB_CUSTOMER_ACCOUNT")
+public class CustomerAccount implements Serializable {
+	private static final long serialVersionUID = 1L;
 
-    @Id
-    private Long id;
-    private String nameOwner;
-    private String agencyCode;
-    private String numberAccount;
-    private String digitVerification;
-    private String registerId;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    public CustomerAccount()
-    {
+	@Column(name = "nameOwner", length = 50, unique = true)
+	private String nameOwner;
 
+	@Column(name = "agencyCode", length = 4)
+	private String agencyCode;
 
-    }
+	@Column(name = "numberAccount", length = 8)
+	private String numberAccount;
 
-    public Long getId()
-    {
-        return id;
-    }
+	@Column(name = "digitVerification", length = 3)
+	private String digitVerification;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	@Column(name = "registerId", length = 20)
+	private String registerId;
 
-    public String getNameOwner() {
-        return nameOwner;
-    }
+	public CustomerAccount()
 
-    public void setNameOwner(String nameOwner) {
-        this.nameOwner = nameOwner;
-    }
+	{
 
-    public String getNumberAccount() {
-        return numberAccount;
-    }
+	}
 
-    public void setNumberAccount(String numberAccount) {
-        this.numberAccount = numberAccount;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public String getAgencyCode() {
-        return agencyCode;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public void setAgencyCode(String agencyCode) {
-        this.agencyCode = agencyCode;
-    }
+	public String getNameOwner() {
+		return nameOwner;
+	}
 
-    public String getDigitVerification() {
-        return digitVerification;
-    }
+	public void setNameOwner(String nameOwner) {
+		this.nameOwner = nameOwner;
+	}
 
-    public void setDigitVerification(String digitVerification) {
-        this.digitVerification = digitVerification;
-    }
+	public String getNumberAccount() {
+		return numberAccount;
+	}
 
-    public String getRegisterId() {
-        return registerId;
-    }
+	public void setNumberAccount(String numberAccount) {
+		this.numberAccount = numberAccount;
+	}
 
-    public void setRegisterId(String registerId) {
-        this.registerId = registerId;
-    }
+	public String getAgencyCode() {
+		return agencyCode;
+	}
 
+	public void setAgencyCode(String agencyCode) {
+		this.agencyCode = agencyCode;
+	}
+
+	public String getDigitVerification() {
+		return digitVerification;
+	}
+
+	public void setDigitVerification(String digitVerification) {
+		this.digitVerification = digitVerification;
+	}
+
+	public String getRegisterId() {
+		return registerId;
+	}
+
+	public void setRegisterId(String registerId) {
+		this.registerId = registerId;
+	}
 
 }
-
