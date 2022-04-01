@@ -2,6 +2,7 @@ package com.BlueBank.Projeto.Final.Model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
 @Table(name = "TB_CUSTOMER_ACCOUNT")
@@ -81,7 +82,27 @@ public class CustomerAccount implements Serializable {
 		this.registerId = registerId;
 	}
 
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CustomerAccount other = (CustomerAccount) obj;
+		return Objects.equals(id, other.id);
+	}
+
 }
 
+    
+
+          
 
 
