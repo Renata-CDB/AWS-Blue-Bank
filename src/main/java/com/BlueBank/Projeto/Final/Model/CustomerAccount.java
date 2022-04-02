@@ -11,6 +11,7 @@ public class CustomerAccount implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long id;
 
 	@Column(name = "nameOwner", length = 50, unique = true)
